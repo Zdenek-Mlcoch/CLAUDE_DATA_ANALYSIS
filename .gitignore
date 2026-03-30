@@ -1,0 +1,18 @@
+# Windows system files
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Sensitive / large context files (ChatGPT exports)
+ChatGPT-*.md
+
+# Editor / IDE
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Claude Code memory (local only, do not push)
+.claude/
