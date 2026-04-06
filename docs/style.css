@@ -289,6 +289,15 @@ section {
   font-size: 1.05rem;
 }
 
+.section-transition {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.93rem;
+  font-style: italic;
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+
 .bg-light { background: var(--bg-light); }
 .bg-alt { background: var(--bg-alt); }
 
