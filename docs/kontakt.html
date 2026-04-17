@@ -42,48 +42,31 @@
 <!-- CONTACT CONTENT -->
 <section>
   <div class="container">
+    <!-- CONTACT FORM — suspendován, kód zachován pro pozdější aktivaci
     <div class="two-col">
-      <!-- CONTACT FORM -->
       <div>
         <h2>Napište mi</h2>
         <p style="color: var(--text-light); margin-bottom: 2rem;">
           Popište stručně vaši situaci a já se vám ozvu do 2 pracovních dnů.
         </p>
         <form id="contactForm" action="https://formsubmit.co/datova.analyza@hapeon.cz" method="POST">
-          <!-- Formsubmit.co konfigurace -->
           <input type="hidden" name="_subject" value="Nová poptávka z webu">
           <input type="hidden" name="_next" value="https://zdenek-mlcoch.github.io/CLAUDE_DATA_ANALYSIS/kontakt.html?sent=1">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_template" value="table">
-
-          <!-- HONEYPOT — Formsubmit honeypot + vlastní honeypot -->
           <input type="text" name="_honey" style="display:none">
           <div style="position: absolute; left: -9999px; top: -9999px;" aria-hidden="true">
             <label for="website">Website</label>
             <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
           </div>
-
-          <div class="form-group">
-            <label for="name">Jméno a příjmení</label>
-            <input type="text" id="name" name="name" required placeholder="Jan Novák">
-          </div>
-          <div class="form-group">
-            <label for="company">Firma</label>
-            <input type="text" id="company" name="company" placeholder="Název firmy">
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required placeholder="jan.novak@firma.cz">
-          </div>
-          <div class="form-group">
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" placeholder="+420 xxx xxx xxx">
-          </div>
-          <div class="form-group">
-            <label for="interest">Oblast zájmu</label>
+          <div class="form-group"><label for="name">Jméno a příjmení</label><input type="text" id="name" name="name" required placeholder="Jan Novák"></div>
+          <div class="form-group"><label for="company">Firma</label><input type="text" id="company" name="company" placeholder="Název firmy"></div>
+          <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" name="email" required placeholder="jan.novak@firma.cz"></div>
+          <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone" placeholder="+420 xxx xxx xxx"></div>
+          <div class="form-group"><label for="interest">Oblast zájmu</label>
             <select id="interest" name="interest">
               <option value="">-- Vyberte --</option>
-              <option value="inventory">Optimalizace zásob (Inventory Performance Pack)</option>
+              <option value="inventory">Optimalizace zásob</option>
               <option value="margin">Analýza ziskovosti a marží</option>
               <option value="cashflow">Cash-flow a working capital</option>
               <option value="accounting">Manažerské účetnictví</option>
@@ -91,24 +74,14 @@
               <option value="other">Jiné / nevím přesně</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="message">Stručný popis situace</label>
-            <textarea id="message" name="message" placeholder="Popište, jaký problém řešíte, jaká data máte k dispozici a co byste chtěli zlepšit..."></textarea>
-          </div>
-
+          <div class="form-group"><label for="message">Stručný popis situace</label><textarea id="message" name="message"></textarea></div>
           <button type="submit" class="btn btn-primary" style="border: none; width: 100%;">Odeslat zprávu</button>
         </form>
-
-        <!-- Potvrzení po odeslání (přesměrování z Formsubmit) -->
-        <script>
-        if (window.location.search.indexOf('sent=1') !== -1) {
-          alert('Děkuji za zprávu. Ozvu se vám do 2 pracovních dnů.');
-          window.history.replaceState({}, '', window.location.pathname);
-        }
-        </script>
       </div>
+      <div>
+    END SUSPENDED FORM -->
 
-      <!-- CONTACT INFO -->
+    <div style="max-width: 720px; margin: 0 auto;">
       <div>
         <h2>Kontaktní údaje</h2>
 
