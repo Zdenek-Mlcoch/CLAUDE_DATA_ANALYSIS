@@ -49,7 +49,20 @@
         <p style="color: var(--text-light); margin-bottom: 2rem;">
           Popište stručně vaši situaci a já se vám ozvu do 2 pracovních dnů.
         </p>
-        <form id="contactForm" action="#" method="POST" onsubmit="return validateForm(event);">
+        <form id="contactForm" action="https://formsubmit.co/datova.analyza@hapeon.cz" method="POST">
+          <!-- Formsubmit.co konfigurace -->
+          <input type="hidden" name="_subject" value="Nová poptávka z webu">
+          <input type="hidden" name="_next" value="https://zdenek-mlcoch.github.io/CLAUDE_DATA_ANALYSIS/kontakt.html?sent=1">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_template" value="table">
+
+          <!-- HONEYPOT — Formsubmit honeypot + vlastní honeypot -->
+          <input type="text" name="_honey" style="display:none">
+          <div style="position: absolute; left: -9999px; top: -9999px;" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
           <div class="form-group">
             <label for="name">Jméno a příjmení</label>
             <input type="text" id="name" name="name" required placeholder="Jan Novák">
@@ -83,67 +96,14 @@
             <textarea id="message" name="message" placeholder="Popište, jaký problém řešíte, jaká data máte k dispozici a co byste chtěli zlepšit..."></textarea>
           </div>
 
-          <!-- HONEYPOT — skryté pole, boti ho vyplní, lidé ne -->
-          <div style="position: absolute; left: -9999px; top: -9999px;" aria-hidden="true">
-            <label for="website">Website</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-          </div>
-
-          <!-- ANTI-SPAM — jednoduchá ověřovací otázka -->
-          <div class="form-group">
-            <label for="antispam" id="antispamLabel">Ověření: Kolik je 7 + 3?</label>
-            <input type="text" id="antispam" name="antispam" required placeholder="Zadejte výsledek" autocomplete="off">
-          </div>
-
           <button type="submit" class="btn btn-primary" style="border: none; width: 100%;">Odeslat zprávu</button>
         </form>
 
+        <!-- Potvrzení po odeslání (přesměrování z Formsubmit) -->
         <script>
-        // Čas načtení formuláře (boti odesílají < 3 s)
-        var formLoadTime = Date.now();
-
-        // Náhodná otázka při každém načtení
-        (function() {
-          var questions = [
-            { q: "Kolik je 7 + 3?", a: 10 },
-            { q: "Kolik je 12 - 4?", a: 8 },
-            { q: "Kolik je 5 + 6?", a: 11 },
-            { q: "Kolik je 9 - 2?", a: 7 },
-            { q: "Kolik je 3 + 8?", a: 11 },
-            { q: "Kolik je 15 - 9?", a: 6 }
-          ];
-          var pick = questions[Math.floor(Math.random() * questions.length)];
-          document.getElementById('antispamLabel').textContent = "Ověření: " + pick.q;
-          document.getElementById('contactForm').dataset.answer = pick.a;
-        })();
-
-        function validateForm(e) {
-          e.preventDefault();
-
-          // 1. Honeypot kontrola
-          if (document.getElementById('website').value !== '') {
-            return false;
-          }
-
-          // 2. Časová kontrola (< 3 s = bot)
-          if (Date.now() - formLoadTime < 3000) {
-            alert('Formulář byl odeslán příliš rychle. Zkuste to prosím znovu.');
-            return false;
-          }
-
-          // 3. Ověřovací otázka
-          var userAnswer = parseInt(document.getElementById('antispam').value, 10);
-          var correctAnswer = parseInt(document.getElementById('contactForm').dataset.answer, 10);
-          if (userAnswer !== correctAnswer) {
-            alert('Nesprávná odpověď na ověřovací otázku. Zkuste to prosím znovu.');
-            return false;
-          }
-
-          // Validace prošla
-          alert('Děkuji za zprávu. Ozvu se vám co nejdříve.');
-          document.getElementById('contactForm').reset();
-          formLoadTime = Date.now();
-          return false;
+        if (window.location.search.indexOf('sent=1') !== -1) {
+          alert('Děkuji za zprávu. Ozvu se vám do 2 pracovních dnů.');
+          window.history.replaceState({}, '', window.location.pathname);
         }
         </script>
       </div>
@@ -156,11 +116,14 @@
           <h4>Zdeněk Mlčoch</h4>
           <p style="margin-bottom: 0.5rem;">Data &amp; Financial Analytics Consultant</p>
           <p style="font-size: 0.93rem; color: var(--text-light);">
-            <strong>E-mail:</strong> info@hapeon.cz<br>
+            <strong>E-mail:</strong> <span id="email-contact"></span><br>
             <strong>Telefon:</strong> +420 724 365 723<br>
             <strong>Region:</strong> Jihomoravský, Zlínský, Olomoucký kraj<br>
             <strong>Forma:</strong> Hybrid (on-site + remote)
           </p>
+          <script>
+          (function(){var u='datova.analyza',d='hapeon.cz',e=u+'@'+d;var s=document.getElementById('email-contact');var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;s.appendChild(a);})();
+          </script>
         </div>
 
         <div class="card" style="margin-bottom: 1.5rem;">
@@ -228,7 +191,10 @@
   <div class="container">
     <h2>Připraveni začít?</h2>
     <p>Vstupní konzultace je bez závazků. Zjistíme, zda má spolupráce smysl pro obě strany.</p>
-    <a href="mailto:info@hapeon.cz" class="btn btn-primary">Napsat e-mail</a>
+    <a id="cta-email" href="#" class="btn btn-primary">Napsat e-mail</a>
+    <script>
+    (function(){var u='datova.analyza',d='hapeon.cz';document.getElementById('cta-email').href='mai'+'lto:'+u+'@'+d;})();
+    </script>
   </div>
 </section>
 
