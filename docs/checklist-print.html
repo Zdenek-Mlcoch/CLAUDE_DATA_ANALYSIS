@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist — Kde vám ve firmě stojí peníze?</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      color: #1a1a2e;
+      background: #fff;
+      padding: 2cm 2.5cm;
+      max-width: 21cm;
+      margin: 0 auto;
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #1a365d;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .print-btn:hover { background: #2b4c7e; }
+
+    .header {
+      border-bottom: 3px solid #1a365d;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .header h1 {
+      font-size: 18pt;
+      color: #1a365d;
+      line-height: 1.2;
+    }
+    .header h1 span {
+      display: block;
+      font-size: 12pt;
+      color: #c9a84c;
+      font-weight: 400;
+      margin-top: 0.3rem;
+    }
+    .header .meta {
+      font-size: 9pt;
+      color: #718096;
+      text-align: right;
+    }
+
+    .intro {
+      background: #f7f9fc;
+      border-left: 4px solid #c9a84c;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 10pt;
+      color: #2d3748;
+      line-height: 1.5;
+    }
+
+    .checklist-title {
+      font-size: 12pt;
+      color: #1a365d;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .item {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+      align-items: flex-start;
+    }
+    .box {
+      min-width: 16px;
+      height: 16px;
+      border: 1.5px solid #1a365d;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .item-content strong {
+      display: block;
+      font-size: 10.5pt;
+      color: #1a365d;
+      margin-bottom: 0.15rem;
+    }
+    .item-content p {
+      font-size: 9.5pt;
+      color: #718096;
+      line-height: 1.4;
+    }
+
+    .evaluation {
+      margin-top: 1.5rem;
+      border-top: 1.5px solid #e2e8f0;
+      padding-top: 1rem;
+    }
+    .evaluation h2 {
+      font-size: 11pt;
+      color: #1a365d;
+      margin-bottom: 0.75rem;
+    }
+    .eval-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .eval-box {
+      border: 1px solid #e2e8f0;
+      padding: 0.6rem 0.8rem;
+    }
+    .eval-box .score {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 0.3rem;
+    }
+    .eval-box p {
+      font-size: 9pt;
+      color: #718096;
+      line-height: 1.4;
+    }
+
+    .footer-cta {
+      margin-top: 1.5rem;
+      border-top: 1.5px solid #1a365d;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-cta p {
+      font-size: 9.5pt;
+      color: #2d3748;
+      max-width: 65%;
+      line-height: 1.4;
+    }
+    .footer-cta .cta-url {
+      font-size: 9.5pt;
+      color: #1a365d;
+      font-weight: 700;
+    }
+
+    .page-footer {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 8.5pt;
+      color: #a0aec0;
+    }
+
+    @media print {
+      .print-btn { display: none; }
+      body { padding: 1.5cm 2cm; }
+    }
+  </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">&#128438; Uložit jako PDF</button>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>Kde vám ve firmě stojí peníze?
+        <span>Checklist pro majitele výrobní nebo obchodní firmy</span>
+      </h1>
+    </div>
+    <div class="meta">
+      Zdeněk Mlčoch<br>
+      Data &amp; Financial Analytics<br>
+      hapeon.cz
+    </div>
+  </div>
+</div>
+
+<div class="intro">
+  Ve výrobních, obchodních a distribučních firmách bývá významná část kapitálu vázaná ve skladu, v pomalu obrátkových
+  položkách, v nejasné marži nebo v nepřesném reportingu. ERP systém obvykle data obsahuje — problém je jinde: data
+  nejsou převedená do manažerského pohledu, který ukáže, kde kapitál pracuje, kde stojí a kde se ztrácí výkonnost.
+  Tento checklist slouží jako rychlá orientační kontrola.
+</div>
+
+<div class="checklist-title">Zaškrtněte body, které odpovídají situaci ve vaší firmě:</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Hodnota zásob roste rychleji než tržby nebo marže.</strong>
+    <p>Sklad se zvyšuje, ale není jasné, zda jde o zdravý růst, bezpečnostní zásobu nebo vázaný kapitál.</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Firma neumí rychle říct, které položky jsou pomalu obrátkové nebo nepohyblivé.</strong>
+    <p>Existují seznamy zásob, ale chybí manažerský pohled podle obrátky, hodnoty a ekonomického dopadu.</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Nákup, obchod, výroba a finance se dívají na stejný problém jinými čísly.</strong>
+    <p>ERP je jeden systém, ale rozhodování probíhá v několika Excelech a čísla se často liší.</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Marže je sledovaná příliš obecně.</strong>
+    <p>Firma zná celkovou marži, ale nevidí dostatečně přesně rozdíly podle produktů, zákazníků nebo kanálů.</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Cash-flow je pod tlakem, ale není jasné, kolik peněz lze realisticky uvolnit ze zásob.</strong>
+    <p>Vedení ví, že zásoby jsou vysoké, ale nemá spolehlivý model pro rozhodnutí, kde snížit stav bez ohrožení provozu.</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>ERP reporty existují, ale nejsou použitelné pro rychlé manažerské rozhodování.</strong>
+    <p>Reporty jsou účetně nebo skladově správné, ale neodpovídají na otázky typu „co s tím máme udělat?"</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Kontrola zásob je spíše reaktivní než pravidelná.</strong>
+    <p>Problém se řeší až ve chvíli, kdy naroste sklad, zhorší se cash-flow nebo vznikne tlak na financování.</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Firma neumí měřit ekonomický dopad zásob přes marži a náklady financování.</strong>
+    <p>Položky jsou hodnocené podle obrátky nebo hodnoty, ale ne podle toho, zda jejich držení dává ekonomický smysl.</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Management nemá jednoduchý měsíční pohled na vývoj zásob, marže a cash-flow v jednom kontextu.</strong>
+    <p>Existují dílčí reporty, ale chybí propojený manažerský obraz.</p>
+  </div>
+</div>
+
+<div class="item">
+  <div class="box"></div>
+  <div class="item-content">
+    <strong>Ve firmě existuje pocit, že „data máme", ale rozhodování se pořád opírá hlavně o zkušenost a intuici.</strong>
+    <p>To obvykle znamená, že problém není v nedostatku dat, ale v jejich zpracování, validaci a interpretaci.</p>
+  </div>
+</div>
+
+<div class="evaluation">
+  <h2>Rychlé vyhodnocení</h2>
+  <div class="eval-grid">
+    <div class="eval-box">
+      <div class="score">0–2 zaškrtnuté body</div>
+      <p>Problém pravděpodobně není akutní. Má smysl udržovat základní pravidelnou kontrolu.</p>
+    </div>
+    <div class="eval-box">
+      <div class="score">3–5 zaškrtnutých bodů</div>
+      <p>Ve firmě pravděpodobně existuje prostor pro zlepšení řízení zásob, marže nebo reportingu. Doporučený další krok je krátká diagnostika dostupných ERP dat.</p>
+    </div>
+    <div class="eval-box">
+      <div class="score">6 a více zaškrtnutých bodů</div>
+      <p>Problém je pravděpodobně systémový. Firma může mít významný kapitál vázaný v zásobách nebo slabou viditelnost marže. Vhodným krokem je vstupní analýza.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer-cta">
+  <p>Pokud jste se v checklistu poznali, dalším krokem je ověření, zda vaše ERP data umožňují smysluplnou vstupní analýzu. Pokračujte krátkou diagnostikou vhodnosti vstupní analýzy na webu.</p>
+  <div class="cta-url">zdenek-mlcoch.github.io/<br>CLAUDE_DATA_ANALYSIS/diagnostika.html</div>
+</div>
+
+<div class="page-footer">
+  &copy; 2026 Zdeněk Mlčoch &mdash; Data &amp; Financial Analytics &mdash; datova.analyza@hapeon.cz
+</div>
+
+</body>
+</html>

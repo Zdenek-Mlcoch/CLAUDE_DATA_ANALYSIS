@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krátká diagnostika | Zdeněk Mlčoch — Data &amp; Financial Analytics</title>
+  <meta name="description" content="Krátká diagnostika vhodnosti vstupní analytické spolupráce. Není to závazná poptávka — ověřte, zda váš typ problému a dostupná data dávají smysl pro analytický projekt.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      Zdeněk Mlčoch
+      <span>Data &amp; Financial Analytics</span>
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Domů</a></li>
+      <li><a href="sluzby.html">Služby</a></li>
+      <li><a href="checklist.html">Checklist</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding: 3.5rem 0;">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Krátká diagnostika <span class="highlight">vhodnosti vstupní analýzy</span></h1>
+      <p class="subtitle">
+        Tento formulář pomůže ověřit, zda má smysl pokračovat vstupní analytickou spoluprací.
+        Nejde o závaznou poptávku. Cílem je zjistit, zda vaše firma má vhodný typ problému,
+        dostupná data a praktický prostor pro analytické zlepšení.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section>
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto;">
+
+      <!--
+        INTERNÍ LEAD SCORING — nepublikováno na webu
+
+        A-LEAD (odpovědět osobně, nabídnout vstupní analýzu):
+        - obrat 80–500 mil. Kč
+        - výrobní / obchodní / distribuční firma
+        - ERP existuje, export dostupný
+        - problém se zásobami, marží, cash-flow nebo reportingem
+        - rozhodovatel = majitel / CFO / finanční ředitel
+        - naléhavost: problém má přímý dopad nebo chce řešit do 1-2 měsíců
+
+        B-LEAD (položit 2–3 doplňující otázky):
+        - data existují, ale problém je vágní
+        - firma je menší nebo mimo ideální segment
+        - rozhodovatel nejasný
+        - naléhavost střední
+
+        C-LEAD (zdvořilá odpověď, odkaz na checklist):
+        - velmi malá firma
+        - slabá data nebo bez ERP
+        - nejasný problém
+        - chce obecné rady
+
+        D-LEAD (nereagovat aktivně):
+        - žádná data
+        - žádný rozhodovatel
+        - chce bezplatné poradenství
+        - chce implementovat sám bez sdílení dat
+      -->
+
+      <form id="diagForm" action="https://formsubmit.co/datova.analyza@hapeon.cz" method="POST">
+        <!-- Formsubmit konfigurace -->
+        <input type="hidden" name="_subject" value="Diagnostika — nová poptávka z webu">
+        <input type="hidden" name="_next" value="https://zdenek-mlcoch.github.io/CLAUDE_DATA_ANALYSIS/diagnostika.html?sent=1">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <!-- Honeypot -->
+        <input type="text" name="_honey" style="display:none">
+        <div style="position: absolute; left: -9999px;" aria-hidden="true">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- 1. Typ firmy -->
+        <div class="form-group">
+          <label for="firm_type">1. Jaký typ firmy zastupujete?</label>
+          <select id="firm_type" name="Typ firmy" required>
+            <option value="">-- Vyberte --</option>
+            <option>Výrobní firma</option>
+            <option>Obchodní / distribuční firma</option>
+            <option>Výroba + obchod</option>
+            <option>E-commerce / retail</option>
+            <option>Služby</option>
+            <option>Jiný typ firmy</option>
+          </select>
+        </div>
+
+        <!-- 2. Obrat -->
+        <div class="form-group">
+          <label for="revenue">2. Jaký je přibližný roční obrat firmy?</label>
+          <select id="revenue" name="Roční obrat" required>
+            <option value="">-- Vyberte --</option>
+            <option>do 50 mil. Kč</option>
+            <option>50–80 mil. Kč</option>
+            <option>80–150 mil. Kč</option>
+            <option>150–300 mil. Kč</option>
+            <option>300–500 mil. Kč</option>
+            <option>nad 500 mil. Kč</option>
+          </select>
+        </div>
+
+        <!-- 3. Hlavní problém -->
+        <div class="form-group">
+          <label>3. Jaký hlavní problém nyní řešíte? <span style="font-weight: 400; color: var(--text-light);">(vyberte max. 3)</span></label>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" name="Problém" value="Vysoká hodnota zásob"> Vysoká hodnota zásob</label>
+            <label class="checkbox-label"><input type="checkbox" name="Problém" value="Pomalá obrátka nebo nepohyblivé zásoby"> Pomalá obrátka nebo nepohyblivé zásoby</label>
+            <label class="checkbox-label"><input type="checkbox" name="Problém" value="Tlak na cash-flow"> Tlak na cash-flow</label>
+            <label class="checkbox-label"><input type="checkbox" name="Problém" value="Nejasná marže produktů nebo zákazníků"> Nejasná marže produktů nebo zákazníků</label>
+            <label class="checkbox-label"><input type="checkbox" name="Problém" value="Nespolehlivý nebo roztříštěný reporting"> Nespolehlivý nebo roztříštěný reporting</label>
+            <label class="checkbox-label"><input type="checkbox" name="Problém" value="ERP obsahuje data, ale neumíme je dobře využít"> ERP obsahuje data, ale neumíme je dobře využít</label>
+            <label class="checkbox-label"><input type="checkbox" name="Problém" value="Management nemá jednotná čísla pro rozhodování"> Management nemá jednotná čísla pro rozhodování</label>
+            <label class="checkbox-label"><input type="checkbox" name="Problém" value="Zatím neumíme problém přesně pojmenovat"> Zatím neumíme problém přesně pojmenovat</label>
+          </div>
+        </div>
+
+        <!-- 4. ERP systém -->
+        <div class="form-group">
+          <label for="erp">4. Jaký ERP nebo účetní systém používáte?</label>
+          <input type="text" id="erp" name="ERP systém" placeholder="Např. HELIOS, ABRA, POHODA, K2, SAP B1, Money, vlastní systém…">
+        </div>
+
+        <!-- 5. Export dat -->
+        <div class="form-group">
+          <label for="export">5. Umíte z ERP exportovat data pro analýzu?</label>
+          <select id="export" name="Export dat z ERP">
+            <option value="">-- Vyberte --</option>
+            <option>Ano, běžně do Excelu / CSV</option>
+            <option>Ano, máme přístup k databázi nebo raw datům</option>
+            <option>Ano, ale jen omezeně</option>
+            <option>Nevíme</option>
+            <option>Ne</option>
+          </select>
+        </div>
+
+        <!-- 6. Dostupná data -->
+        <div class="form-group">
+          <label>6. Která data jsou pravděpodobně dostupná?</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Skladové zásoby"> Skladové zásoby</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Skladové pohyby"> Skladové pohyby</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Prodeje / fakturace"> Prodeje / fakturace</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Marže / ziskovost položek"> Marže / ziskovost položek</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Nákupy"> Nákupy</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Zákazníci"> Zákazníci</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Účetní data"> Účetní data</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Pohledávky / závazky / cash-flow"> Pohledávky / závazky / cash-flow</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Výroba / spotřeba materiálu"> Výroba / spotřeba materiálu</label>
+            <label class="checkbox-label"><input type="checkbox" name="Dostupná data" value="Nevíme"> Nevíme</label>
+          </div>
+        </div>
+
+        <!-- 7. Rozhodovatel -->
+        <div class="form-group">
+          <label for="decision">7. Kdo by byl hlavní rozhodovatel pro případnou spolupráci?</label>
+          <select id="decision" name="Rozhodovatel">
+            <option value="">-- Vyberte --</option>
+            <option>Majitel / jednatel</option>
+            <option>CFO / finanční ředitel</option>
+            <option>Finanční manažer / controller</option>
+            <option>Účetní</option>
+            <option>IT</option>
+            <option>Zatím není určeno</option>
+          </select>
+        </div>
+
+        <!-- 8. Naléhavost -->
+        <div class="form-group">
+          <label for="urgency">8. Jak naléhavé je řešení problému?</label>
+          <select id="urgency" name="Naléhavost">
+            <option value="">-- Vyberte --</option>
+            <option>Pouze preventivně</option>
+            <option>Chceme to řešit během 3–6 měsíců</option>
+            <option>Chceme to řešit během 1–2 měsíců</option>
+            <option>Problém je aktuálně významný</option>
+            <option>Problém má přímý dopad na cash-flow nebo řízení firmy</option>
+          </select>
+        </div>
+
+        <!-- 9. Popis situace -->
+        <div class="form-group">
+          <label for="situation">9. Stručně popište situaci vlastními slovy.</label>
+          <textarea id="situation" name="Popis situace" rows="4" placeholder="Co vás vedlo k tomu, že tuto oblast chcete řešit právě teď?"></textarea>
+        </div>
+
+        <!-- 10. Kontaktní údaje -->
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+          <h3 style="margin-bottom: 1.25rem; color: var(--primary);">Kontaktní údaje</h3>
+
+          <div class="form-group">
+            <label for="contact_name">Jméno a příjmení *</label>
+            <input type="text" id="contact_name" name="Jméno a příjmení" required placeholder="Jan Novák">
+          </div>
+          <div class="form-group">
+            <label for="contact_company">Firma *</label>
+            <input type="text" id="contact_company" name="Firma" required placeholder="Název firmy">
+          </div>
+          <div class="form-group">
+            <label for="contact_position">Pozice</label>
+            <input type="text" id="contact_position" name="Pozice" placeholder="Majitel, CFO, Finanční ředitel…">
+          </div>
+          <div class="form-group">
+            <label for="contact_email">E-mail *</label>
+            <input type="email" id="contact_email" name="E-mail" required placeholder="jan.novak@firma.cz">
+          </div>
+          <div class="form-group">
+            <label for="contact_phone">Telefon <span style="font-weight: 400; color: var(--text-light);">(nepovinné)</span></label>
+            <input type="tel" id="contact_phone" name="Telefon" placeholder="+420 xxx xxx xxx">
+          </div>
+          <div class="form-group">
+            <label for="contact_web">Web firmy <span style="font-weight: 400; color: var(--text-light);">(nepovinné)</span></label>
+            <input type="url" id="contact_web" name="Web firmy" placeholder="https://www.firma.cz">
+          </div>
+        </div>
+
+        <!-- 11. Souhlas -->
+        <div class="form-group" style="margin-top: 1.5rem;">
+          <label class="checkbox-label" style="font-size: 0.93rem;">
+            <input type="checkbox" name="Souhlas" value="Souhlasím" required>
+            Souhlasím, aby uvedené údaje byly použity za účelem posouzení vhodnosti spolupráce a následného kontaktování. *
+          </label>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <button type="submit" class="btn btn-primary" style="border: none; width: 100%; font-size: 1.05rem; padding: 0.9rem;">Odeslat diagnostiku</button>
+          <p style="text-align: center; margin-top: 0.75rem; font-size: 0.87rem; color: var(--text-light);">
+            Odpovím osobně do 2 pracovních dnů.
+          </p>
+        </div>
+
+      </form>
+
+      <!-- Potvrzení po odeslání -->
+      <div id="form-success" style="display: none; margin-top: 2rem;">
+        <div class="card" style="border-left: 4px solid var(--accent); text-align: center; padding: 2.5rem;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">Děkuji za vyplnění diagnostiky.</h3>
+          <p style="color: var(--text-light); line-height: 1.7;">
+            Na základě uvedených informací posoudím, zda má smysl pokračovat vstupní analytickou spoluprací.
+            Pokud bude vaše situace vhodná, ozvu se s návrhem dalšího kroku a rámcem možné vstupní analýzy.
+          </p>
+          <a href="index.html" class="btn btn-dark" style="margin-top: 1.5rem; display: inline-block;">Zpět na úvod</a>
+        </div>
+      </div>
+
+      <script>
+      if (window.location.search.indexOf('sent=1') !== -1) {
+        document.getElementById('diagForm').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+      </script>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Zdeněk Mlčoch</h4>
+        <p>Datová analytika pro moravské výrobní a obchodní firmy. 30+ let finančního controllingu,
+           pokročilé SQL modely a AI-augmentovaná analýza reálných provozních dat.</p>
+      </div>
+      <div>
+        <h4>Navigace</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="sluzby.html">Služby</a></li>
+          <li><a href="checklist.html">Checklist</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Region</h4>
+        <p>Jihomoravský kraj<br>Zlínský kraj<br>Olomoucký kraj</p>
+        <p style="margin-top: 1rem;">Hybrid: on-site + remote</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Zdeněk Mlčoch &mdash; Data &amp; Financial Analytics. Všechna práva vyhrazena.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
