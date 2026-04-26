@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zdenek-mlcoch.github.io/CLAUDE_DATA_ANALYSIS/sitemap.xml
