@@ -198,6 +198,14 @@
         <p style="font-size: 0.93rem; color: var(--text-light); margin-bottom: 1rem;" id="score-display"></p>
       </div>
 
+      <!-- CTA PO VÝSLEDKU -->
+      <div id="checklist-cta" style="display: none; margin-top: 2rem; padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border);">
+        <a href="diagnostika.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 0.85rem 2rem;">Pokračovat krátkou diagnostikou</a>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+          Diagnostika není závazná poptávka. Pomůže ověřit, zda dostupná ERP data dávají smysl pro vstupní analýzu.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -270,17 +278,20 @@ var resultCard = document.getElementById('result-card');
 var resultHeading = document.getElementById('result-heading');
 var resultText = document.getElementById('result-text');
 var scoreDisplay = document.getElementById('score-display');
+var ctaDiv = document.getElementById('checklist-cta');
 
 function updateScore() {
   var count = 0;
   checks.forEach(function(c) { if (c.checked) count++; });
   if (count === 0) {
     resultDiv.style.display = 'none';
+    ctaDiv.style.display = 'none';
     scoreDisplay.textContent = '';
     return;
   }
   scoreDisplay.textContent = 'Zaškrtnuto: ' + count + ' z 10';
   resultDiv.style.display = 'block';
+  ctaDiv.style.display = 'block';
   if (count <= 2) {
     resultCard.style.borderLeft = '4px solid var(--accent)';
     resultHeading.textContent = '0–2 body: Problém pravděpodobně není akutní.';
