@@ -24,4 +24,8 @@
     <loc>https://zdenek-mlcoch.github.io/CLAUDE_DATA_ANALYSIS/kontakt.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://zdenek-mlcoch.github.io/CLAUDE_DATA_ANALYSIS/kde-lezi-penize.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
