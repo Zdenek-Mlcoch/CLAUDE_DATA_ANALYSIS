@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kde vám ve firmě leží peníze? | Zdeněk Mlčoch — Data &amp; Financial Analytics</title>
+  <meta name="description" content="Praktický checklist pro majitele výrobních a obchodních firem. Pomůže odhalit, zda firma zbytečně váže kapitál v zásobách, marži, cash-flow nebo nevyužitých ERP datech.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Zdeněk Mlčoch">
+  <link rel="canonical" href="https://zdenek-mlcoch.github.io/CLAUDE_DATA_ANALYSIS/kde-lezi-penize.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:title" content="Kde vám ve firmě leží peníze? | Zdeněk Mlčoch">
+  <meta property="og:description" content="Checklist pro majitele výrobní nebo obchodní firmy — zásoby, marže, cash-flow a ERP data.">
+  <meta property="og:url" content="https://zdenek-mlcoch.github.io/CLAUDE_DATA_ANALYSIS/kde-lezi-penize.html">
+  <meta property="og:site_name" content="Zdeněk Mlčoch – Data & Financial Analytics">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kde vám ve firmě leží peníze? | Zdeněk Mlčoch">
+  <meta name="twitter:description" content="Checklist pro majitele firmy: zásoby, marže, cash-flow, ERP data.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      Zdeněk Mlčoch
+      <span>Data &amp; Financial Analytics</span>
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Domů</a></li>
+      <li><a href="sluzby.html">Služby</a></li>
+      <li><a href="checklist.html">Checklist</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding: 3.5rem 0;">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Kde vám ve firmě <span class="highlight">leží peníze?</span></h1>
+      <p class="subtitle">
+        Checklist pro majitele výrobní nebo obchodní firmy
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section>
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto;">
+
+      <div class="quote-block">
+        <p>Většina firem nezačne řešit data proto, že chce „lepší reporting". Začne je řešit ve chvíli, kdy se objeví tlak na cash-flow, rostoucí zásoby, nejasná marže nebo ztráta důvěry v čísla.</p>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <p>Tento checklist je určen pro majitele a vedení výrobních, obchodních a distribučních firem, které mají ERP systém, skladová nebo prodejní data, ale nemají jistotu, zda je využívají pro skutečné řízení firmy.</p>
+        <p style="margin-top: 1rem; color: var(--text-light);">Nejde o technický audit ERP systému. Cílem je rychle rozpoznat, zda ve firmě existují signály, že kapitál, marže nebo manažerská rozhodnutí nejsou dostatečně pod kontrolou.</p>
+      </div>
+
+      <div style="margin-top: 2rem; padding: 1rem 1.25rem; background: var(--bg-light); border-radius: var(--radius); border-left: 3px solid var(--accent);">
+        <p style="font-size: 0.93rem; color: var(--text-light); margin: 0;">
+          <strong style="color: var(--text);">Jak checklist používat:</strong>
+          Zaškrtněte všechny body, které se týkají vaší firmy. Na konci uvidíte orientační vyhodnocení a doporučený další krok.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST SECTIONS -->
+<section class="bg-light">
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto;">
+
+      <!-- SECTION A -->
+      <div class="checklist-section" style="margin-bottom: 3rem;">
+        <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent);">
+          A. Zásoby a vázaný kapitál
+        </h2>
+        <div class="checklist-items">
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="a">
+              <div>
+                <strong>Hodnota zásob roste rychleji než tržby.</strong>
+                <p>Sklad se zvyšuje, ale výkonnost firmy neodpovídá tempu vázaného kapitálu.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="a">
+              <div>
+                <strong>Ve skladu existují položky, o kterých nikdo nedokáže říct, zda se ještě prodají nebo spotřebují.</strong>
+                <p>Nepohyblivé zásoby zůstávají, protože chybí systematická identifikace.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="a">
+              <div>
+                <strong>Management pravidelně řeší nedostatek cash-flow, ale současně drží vysoké zásoby.</strong>
+                <p>Peníze jsou fyzicky přítomné — jen ve špatné formě.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="a">
+              <div>
+                <strong>Firma nemá jasně oddělené rychloobrátkové, pomaluobrátkové a nepohyblivé položky.</strong>
+                <p>Všechny zásoby se řídí stejně, přestože mají zcela odlišný ekonomický charakter.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="a">
+              <div>
+                <strong>Nákup nebo výroba rozhoduje podle zkušenosti, nikoliv podle pravidelné analytiky obrátky a spotřeby.</strong>
+                <p>Intuice nahrazuje data i tam, kde data existují.</p>
+              </div>
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECTION B -->
+      <div class="checklist-section" style="margin-bottom: 3rem;">
+        <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent);">
+          B. Marže a ziskovost
+        </h2>
+        <div class="checklist-items">
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="b">
+              <div>
+                <strong>Obrat roste, ale zisk neroste odpovídajícím způsobem.</strong>
+                <p>Tržby vypadají dobře, ale výsledek hospodaření zůstává slabý.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="b">
+              <div>
+                <strong>Firma nevidí spolehlivě ziskovost podle položek, skupin výrobků nebo zákazníků.</strong>
+                <p>Celková marže je známá, ale struktura zisku zůstává nejasná.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="b">
+              <div>
+                <strong>Manažerské reporty ukazují celkové výsledky, ale nevysvětlují, kde vzniká problém.</strong>
+                <p>Čísla jsou, ale nepomáhají rozhodovat.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="b">
+              <div>
+                <strong>Část sortimentu nebo zakázek může vypadat obchodně úspěšně, ale ekonomicky slabě.</strong>
+                <p>Produkt nebo zákazník, který přináší tržby, nemusí přinášet zisk.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="b">
+              <div>
+                <strong>Marže se vyhodnocuje spíše zpětně než jako nástroj řízení.</strong>
+                <p>Analýza marže přichází po faktu, ne jako podklad pro rozhodnutí.</p>
+              </div>
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECTION C -->
+      <div class="checklist-section" style="margin-bottom: 3rem;">
+        <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent);">
+          C. ERP data a manažerský reporting
+        </h2>
+        <div class="checklist-items">
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="c">
+              <div>
+                <strong>ERP systém obsahuje data, ale vedení z nich nedostává jasné odpovědi.</strong>
+                <p>Data jsou v systému, ale nejsou přeložena do jazyka rozhodování.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="c">
+              <div>
+                <strong>Různí lidé ve firmě pracují s různými čísly pro stejný problém.</strong>
+                <p>Neexistuje jeden sdílený pohled na výkonnost firmy.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="c">
+              <div>
+                <strong>Excelové reporty se ručně upravují a není vždy jasné, která verze je správná.</strong>
+                <p>Reporting závisí na konkrétní osobě, ne na systému.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="c">
+              <div>
+                <strong>Manažerský reporting je příliš účetní, technický nebo detailní.</strong>
+                <p>Výstupy slouží auditu, ne operativnímu rozhodování managementu.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="c">
+              <div>
+                <strong>Získání odpovědi z dat trvá příliš dlouho.</strong>
+                <p>Než dorazí analýza, situace se změní nebo rozhodnutí nelze odložit.</p>
+              </div>
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECTION D -->
+      <div class="checklist-section" style="margin-bottom: 2rem;">
+        <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent);">
+          D. Cash-flow a rozhodování
+        </h2>
+        <div class="checklist-items">
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="d">
+              <div>
+                <strong>Cash-flow se řeší hlavně operativně, ne systematicky.</strong>
+                <p>Likvidita se sleduje na denní bázi z nutnosti, ne na základě modelu.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="d">
+              <div>
+                <strong>Vedení nevidí včas, kde je kapitál zbytečně vázaný.</strong>
+                <p>Zásoby, pohledávky nebo závazky nejsou pravidelně analyzovány z pohledu cash-flow dopadu.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="d">
+              <div>
+                <strong>Rozhodnutí o nákupu, výrobě nebo sortimentu nejsou pravidelně propojena s cash-flow dopadem.</strong>
+                <p>Obchodní a výrobní rozhodnutí se dělají bez vědomí jejich kapitálových důsledků.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="d">
+              <div>
+                <strong>Firma reaguje na problémy pozdě, až když mají dopad na financování.</strong>
+                <p>Systém včasného varování chybí nebo nefunguje spolehlivě.</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <label class="checklist-label">
+              <input type="checkbox" class="checklist-check" data-section="d">
+              <div>
+                <strong>Chybí jednoduchý manažerský pohled: co se děje, proč se to děje a co s tím udělat.</strong>
+                <p>Data existují v různých formách, ale nikdo je nepřekládá do akčního manažerského přehledu.</p>
+              </div>
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- LIVE SCORE DISPLAY -->
+      <div id="score-bar" style="margin-top: 1rem; text-align: center; display: none;">
+        <p style="font-size: 0.93rem; color: var(--text-light);">Zaškrtnuto: <strong id="score-count">0</strong> z 20</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EVALUATION -->
+<section>
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto;">
+
+      <div class="section-header" style="text-align: left;">
+        <h2>Jak výsledek orientačně vyhodnotit</h2>
+      </div>
+
+      <div id="eval-result" style="display: none; margin-bottom: 2rem;">
+        <div class="card" id="eval-card">
+          <h3 id="eval-heading"></h3>
+          <p id="eval-text"></p>
+        </div>
+      </div>
+
+      <!-- Statická tabulka vyhodnocení (vždy viditelná) -->
+      <div class="card-grid-3" style="margin-bottom: 2rem;">
+        <div class="card" style="border-top: 3px solid var(--accent);">
+          <div style="font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">0–4 body</div>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Pravděpodobně nejde o akutní problém. Přesto může mít smysl ověřit, zda reporting odpovídá současné velikosti firmy.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent);">
+          <div style="font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">5–9 bodů</div>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Ve firmě pravděpodobně existují dílčí slabá místa. Vstupní analytická prověrka může pomoci určit prioritu.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid #c0392b;">
+          <div style="font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">10+ bodů</div>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Vysoká pravděpodobnost, že firma nemá dostatečně propojená ERP data s manažerským rozhodováním. Vstupní analýza ukáže největší ekonomický dopad.</p>
+        </div>
+      </div>
+
+      <!-- DISCLAIMER -->
+      <div style="padding: 1rem 1.25rem; background: var(--bg-light); border-radius: var(--radius); border-left: 3px solid var(--border); margin-bottom: 2.5rem;">
+        <p style="font-size: 0.88rem; color: var(--text-light); margin: 0;">
+          <strong style="color: var(--text);">Poznámka:</strong>
+          Checklist není audit, znalecký posudek ani náhrada finančního řízení. Slouží pouze jako orientační diagnostický nástroj pro první rozhodnutí, zda má smysl analyzovat dostupná data podrobněji.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div style="padding: 2.5rem; background: var(--bg-alt); border-radius: var(--radius-lg); text-align: center;">
+        <h3 style="color: var(--primary); margin-bottom: 1rem;">Dává smysl ověřit vaše data?</h3>
+        <p style="color: var(--text-light); margin-bottom: 1.75rem; max-width: 560px; margin-left: auto; margin-right: auto;">
+          Pokud jste v checklistu označili více oblastí, dalším krokem není obecná konzultace, ale ověření, zda má firma vhodná data a dostatečně konkrétní problém pro vstupní analytickou spolupráci.
+        </p>
+        <a href="diagnostika.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 0.9rem 2.5rem;">Ověřit vhodnost vstupní analýzy</a>
+        <p style="margin-top: 1rem; font-size: 0.87rem; color: var(--text-light);">
+          Vyplnění zabere přibližně 5–7 minut. Nejde o závaznou poptávku.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Zdeněk Mlčoch</h4>
+        <p>Datová analytika pro moravské výrobní a obchodní firmy. 30+ let finančního controllingu,
+           pokročilé SQL modely a AI-augmentovaná analýza reálných provozních dat.</p>
+      </div>
+      <div>
+        <h4>Navigace</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="sluzby.html">Služby</a></li>
+          <li><a href="checklist.html">Checklist</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Region</h4>
+        <p>Jihomoravský kraj<br>Zlínský kraj<br>Olomoucký kraj</p>
+        <p style="margin-top: 1rem;">Hybrid: on-site + remote</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Zdeněk Mlčoch &mdash; Data &amp; Financial Analytics. Všechna práva vyhrazena.
+    </div>
+  </div>
+</footer>
+
+<script>
+var checks = document.querySelectorAll('.checklist-check');
+var scoreBar = document.getElementById('score-bar');
+var scoreCount = document.getElementById('score-count');
+var evalResult = document.getElementById('eval-result');
+var evalCard = document.getElementById('eval-card');
+var evalHeading = document.getElementById('eval-heading');
+var evalText = document.getElementById('eval-text');
+
+function updateScore() {
+  var count = 0;
+  checks.forEach(function(c) { if (c.checked) count++; });
+
+  scoreCount.textContent = count;
+
+  if (count === 0) {
+    scoreBar.style.display = 'none';
+    evalResult.style.display = 'none';
+    return;
+  }
+
+  scoreBar.style.display = 'block';
+
+  if (count <= 4) {
+    evalCard.style.borderLeft = '4px solid var(--accent)';
+    evalHeading.textContent = '0–4 body: Pravděpodobně nejde o akutní problém.';
+    evalText.textContent = 'Přesto může mít smysl ověřit, zda reporting a datové výstupy odpovídají současné velikosti a struktuře firmy.';
+  } else if (count <= 9) {
+    evalCard.style.borderLeft = '4px solid var(--accent)';
+    evalHeading.textContent = 'Zaškrtnuto ' + count + ' bodů: Ve firmě pravděpodobně existují dílčí slabá místa.';
+    evalText.textContent = 'Slabá místa v zásobách, marži, cash-flow nebo reportingu. Vstupní analytická prověrka může pomoci určit, kde je největší ekonomický dopad a co řešit jako první.';
+  } else {
+    evalCard.style.borderLeft = '4px solid #c0392b';
+    evalHeading.textContent = 'Zaškrtnuto ' + count + ' bodů: Vysoká pravděpodobnost systémového problému.';
+    evalText.textContent = 'Existují jasné signály, že firma nemá dostatečně propojená ERP data s manažerským rozhodováním. Vstupní analýza může ukázat, kde je největší ekonomický dopad a jak ho rychle kvantifikovat.';
+  }
+
+  evalResult.style.display = 'block';
+}
+
+checks.forEach(function(c) {
+  c.addEventListener('change', updateScore);
+});
+</script>
+
+</body>
+</html>
