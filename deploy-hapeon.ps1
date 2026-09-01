@@ -4,7 +4,7 @@
 
 $FtpHost   = "ftp.hapeon.cz"
 $FtpUser   = "zdenekmlcoch.hapeon.cz"
-$RemoteDir = ""   # koren FTP uctu (/home/html/hapeon.cz/); pokud soubory pristanou jinam, upravte
+$RemoteDir = "public_html"   # webovy koren (docroot) - odtud server serviruje hapeon.cz
 
 $LocalDir = Join-Path $PSScriptRoot "docs"
 if (-not (Test-Path $LocalDir)) { Write-Host "Slozka docs/ nenalezena." -ForegroundColor Red; exit 1 }
